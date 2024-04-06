@@ -2,7 +2,7 @@
 
 namespace KMA.CSharp2024.Lab2.Helpers
 {
-    internal static class PersonHelper
+    public static class PersonHelper
     {
         #region Main methods
         public static bool IsAdult(DateTime birthDate)

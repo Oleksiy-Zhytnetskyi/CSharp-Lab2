@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace KMA.CSharp2024.Lab2.ViewModels
+namespace KMA.CSharp2024.Lab2.ViewModels.Abstract
 {
-    internal class BaseViewModel : INotifyPropertyChanged
+    public abstract class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 

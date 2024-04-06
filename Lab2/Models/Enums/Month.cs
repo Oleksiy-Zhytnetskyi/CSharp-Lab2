@@ -1,6 +1,6 @@
 ﻿namespace KMA.CSharp2024.Lab2.Models.Enums
 {
-    internal enum Month
+    public enum Month
     {
         January = 1,
         February,

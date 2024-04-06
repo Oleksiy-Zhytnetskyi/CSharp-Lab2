@@ -1,7 +1,5 @@
-﻿using KMA.CSharp2024.Lab2.Helpers;
-using KMA.CSharp2024.Lab2.Views;
+﻿using KMA.CSharp2024.Lab2.ViewModels;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace KMA.CSharp2024.Lab2
 {
@@ -13,6 +11,8 @@ namespace KMA.CSharp2024.Lab2
         public MainWindow()
         {
             InitializeComponent();
+
+            DataContext = new MainWindowViewModel(Content);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using KMA.CSharp2024.Lab2.ViewModels;
+using System.Windows.Controls;
 
 namespace KMA.CSharp2024.Lab2.Views
 {
@@ -7,9 +8,11 @@ namespace KMA.CSharp2024.Lab2.Views
     /// </summary>
     public partial class InfoDisplayView : UserControl
     {
-        public InfoDisplayView()
+        public InfoDisplayView(InfoDisplayViewModel viewModel)
         {
             InitializeComponent();
+
+            DataContext = viewModel;
         }
     }
 }

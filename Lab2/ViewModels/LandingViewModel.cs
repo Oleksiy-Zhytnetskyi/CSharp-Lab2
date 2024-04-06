@@ -1,12 +1,14 @@
 ﻿using KMA.CSharp2024.Lab2.Commands;
 using KMA.CSharp2024.Lab2.Helpers;
 using KMA.CSharp2024.Lab2.Models;
+using KMA.CSharp2024.Lab2.ViewModels.Abstract;
+using KMA.CSharp2024.Lab2.Views;
 using System.Windows;
 using System.Windows.Input;
 
 namespace KMA.CSharp2024.Lab2.ViewModels
 {
-    internal class LandingViewModel : BaseViewModel
+    public class LandingViewModel : ViewChangeCapableViewModel
     {
         #region Constants
         private const int AGE_THRESHOLD = 135;
@@ -106,7 +108,11 @@ namespace KMA.CSharp2024.Lab2.ViewModels
             _person = new Person(_firstName, _lastName, _email, _birthDate);
             await _person.UpdateReadonlyFieldsAsync();
             UnblockUI();
-            // Switch view
+            InfoDisplayViewModel infoViewModelInstance = new InfoDisplayViewModel(
+                FirstName, LastName, Email, BirthDate, 
+                _person.IsAdult, _person.IsBirthDay, _person.SunSign, _person.ChineseSign
+            );
+            RequestViewChange(typeof(InfoDisplayView), [infoViewModelInstance]);
         }
 
         private bool CanExecuteProceed(object parameter)
@@ -130,6 +136,6 @@ namespace KMA.CSharp2024.Lab2.ViewModels
             IsActiveUI = true;
             OnPropertyChanged(nameof(IsActiveUI));
         }
-        #endregion
+        #endregion        
     }
 }

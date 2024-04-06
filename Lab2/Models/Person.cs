@@ -3,7 +3,7 @@ using KMA.CSharp2024.Lab2.Models.Enums;
 
 namespace KMA.CSharp2024.Lab2.Models
 {
-    internal class Person
+    public class Person
     {
         #region Fields
         // Main Fields (get, set)

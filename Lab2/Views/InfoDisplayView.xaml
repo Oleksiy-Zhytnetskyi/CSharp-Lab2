@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:KMA.CSharp2024.Lab2.Views"
+             xmlns:local="clr-namespace:KMA.CSharp2024.Lab2.Views" 
+             xmlns:viewmodels="clr-namespace:KMA.CSharp2024.Lab2.ViewModels" 
+             d:DataContext="{d:DesignInstance Type=viewmodels:InfoDisplayViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              d:Background="WhiteSmoke">
@@ -16,6 +18,7 @@
             <RowDefinition Height="0.75*"></RowDefinition>
             <RowDefinition Height="0.75*"></RowDefinition>
             <RowDefinition Height="0.75*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.6*"></ColumnDefinition>
@@ -42,7 +45,7 @@
             Height="40"
             FontSize="22"
             Margin="15 0 15 0"
-            Content="Placeholder Name">
+            Content="{Binding FirstName, Mode=OneWay}">
         </Label>
 
         <Label
@@ -56,7 +59,7 @@
             Height="40"
             FontSize="22"
             Margin="15 0 15 0"
-            Content="Placeholder Surname">
+            Content="{Binding LastName, Mode=OneWay}">
         </Label>
 
         <Label
@@ -70,7 +73,7 @@
             Height="40"
             FontSize="22"
             Margin="15 0 15 0"
-            Content="veryverylongemail@gmail.com">
+            Content="{Binding Email, Mode=OneWay}">
         </Label>
 
         <Label
@@ -84,7 +87,7 @@
             Height="40"
             FontSize="22"
             Margin="15 0 15 0"
-            Content="06/04/2024">
+            Content="{Binding BirthDate, Mode=OneWay}">
         </Label>
 
         <Label
@@ -98,7 +101,7 @@
             Height="34"
             FontSize="22"
             Margin="15 0 15 0"
-            Content="Yes">
+            Content="{Binding IsAdult, Mode=OneWay}">
         </Label>
 
         <Label
@@ -112,7 +115,7 @@
             Height="40"
             FontSize="22"
             Margin="15 0 15 0"
-            Content="Yes (Happy Birthday!)">
+            Content="{Binding IsBirthday, Mode=OneWay}">
         </Label>
 
         <Label
@@ -126,7 +129,7 @@
             Height="40"
             FontSize="22"
             Margin="15 0 15 0"
-            Content="Sagittarius">
+            Content="{Binding SunSign, Mode=OneWay}">
         </Label>
 
         <Label
@@ -140,7 +143,17 @@
             Height="40"
             FontSize="22"
             Margin="15 0 15 0"
-            Content="Dragon">
+            Content="{Binding ChineseSign, Mode=OneWay}">
         </Label>
+
+        <Button
+            Grid.Row="7" Grid.ColumnSpan="4"
+            Content="Return"
+            HorizontalAlignment="Center" VerticalAlignment="Center"
+            Width="115"
+            Height="40"
+            FontSize="24" FontWeight="Medium"
+            Command="{Binding ReturnCommand}">
+        </Button>
     </Grid>
 </UserControl>

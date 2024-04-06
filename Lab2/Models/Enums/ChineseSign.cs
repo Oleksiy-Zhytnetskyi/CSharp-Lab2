@@ -1,6 +1,6 @@
 ﻿namespace KMA.CSharp2024.Lab2.Models.Enums
 {
-    internal enum ChineseSign
+    public enum ChineseSign
     {
         Rat,
         Ox,

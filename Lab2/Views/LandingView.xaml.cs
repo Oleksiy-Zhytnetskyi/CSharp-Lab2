@@ -8,11 +8,11 @@ namespace KMA.CSharp2024.Lab2.Views
     /// </summary>
     public partial class LandingView : UserControl
     {
-        public LandingView()
+        public LandingView(LandingViewModel viewModel)
         {
             InitializeComponent();
 
-            DataContext = new LandingViewModel();
+            DataContext = viewModel;
         }
 
         private void DpOnSelectedDateChanged(object sender, SelectionChangedEventArgs e)

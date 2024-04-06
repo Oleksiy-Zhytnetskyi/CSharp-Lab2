@@ -2,7 +2,7 @@
 
 namespace KMA.CSharp2024.Lab2.Commands
 {
-    internal class RelayCommand : ICommand
+    public class RelayCommand : ICommand
     {
         private readonly Action<object> _execute;
         private readonly Predicate<object> _canExecute;
