@@ -2,7 +2,7 @@
 
 namespace KMA.CSharp2024.Lab2.Helpers
 {
-    internal class ZodiacHelper
+    internal static class ZodiacHelper
     {
         public static ChineseSign GetChineseSign(DateTime birthDate)
         {

@@ -92,7 +92,7 @@ namespace KMA.CSharp2024.Lab2.Models
         #endregion
 
         #region Public Methods
-        public async Task UpdateReadonlyFields()
+        public async Task UpdateReadonlyFieldsAsync()
         {
             Task<bool> isAdultTask = Task.Run(() => PersonHelper.IsAdult(_birthDate));
             Task<bool> isBirthdayTask = Task.Run(() => PersonHelper.IsBirthday(_birthDate));

@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using KMA.CSharp2024.Lab2.Helpers;
+using KMA.CSharp2024.Lab2.Views;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace KMA.CSharp2024.Lab2
 {
